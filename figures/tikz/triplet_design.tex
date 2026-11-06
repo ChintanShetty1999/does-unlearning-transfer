@@ -1,0 +1,31 @@
+%% Figure: the forget / linked / distant triplet, with a real CLS-Bench v2 example.
+\begin{tikzpicture}[
+    font=\small,
+    card/.style={draw=#1, line width=0.8pt, fill=#1!6, rounded corners=3pt,
+                 text width=46mm, align=left, inner sep=5pt},
+    tag/.style={fill=#1, text=white, font=\footnotesize\bfseries, rounded corners=2pt,
+                inner sep=3pt},
+    link/.style={draw=thNeutral, line width=1pt},
+  ]
+  \node[card=thForget] (f) at (0,0)
+    {\textbf{Dolfarin} (fictitious drug)\\[2pt]
+     \footnotesize ``Dolfarin is classified as a beta-adrenergic blocker, dosed at 10\,mg daily.''};
+  \node[tag=thForget, anchor=south west] at (f.north west) {FORGET};
+
+  \node[card=thLinked] (l) at (6.9,0)
+    {\textbf{Beta-adrenergic blockers} (real principle)\\[2pt]
+     \footnotesize General pharmacology of the class the fictitious drug belongs to.};
+  \node[tag=thLinked, anchor=south west] at (l.north west) {LINKED};
+
+  \node[card=thRetain] (d) at (13.8,0)
+    {\textbf{A different cluster} (real knowledge)\\[2pt]
+     \footnotesize Medical facts from a different topic cluster, e.g.\ another organ system.};
+  \node[tag=thRetain, anchor=south west] at (d.north west) {DISTANT};
+
+  \draw[link, -{Stealth[length=2.4mm]}] (f.east) -- node[above, font=\footnotesize] {instance of} (l.west);
+  \draw[link, dashed] (l.east) -- node[above, font=\footnotesize] {different cluster} (d.west);
+
+  \node[font=\footnotesize, text=thNeutral, align=center, text width=150mm] at (6.9,-1.75)
+    {Unlearning should erase the forget item, leave the linked principle intact, and leave the distant item untouched.\\
+     Targeted leakage $=$ damage to linked $-$ damage to distant: it isolates harm caused by the dependency itself.};
+\end{tikzpicture}

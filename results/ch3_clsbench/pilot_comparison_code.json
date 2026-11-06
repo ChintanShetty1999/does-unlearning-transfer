@@ -1,0 +1,70 @@
+{
+  "baselines": {
+    "ppl_forget": 1.1237659697898055,
+    "ppl_linked": 1.0546071282472875,
+    "ppl_control": 1.1383588128036852,
+    "vuln_rate": 0.25
+  },
+  "methods": {
+    "ga": {
+      "method": "ga",
+      "ppl_forget_before": 1.1237659697898055,
+      "ppl_forget_after": 22026.465794806718,
+      "ppl_linked_before": 1.0546071282472875,
+      "ppl_linked_after": 2665.422576081048,
+      "ppl_control_before": 1.1383588128036852,
+      "ppl_control_after": 22026.465794806718,
+      "pct_forget": 1959958.0892235641,
+      "pct_linked": 252640.80789790105,
+      "pct_control": 1934831.7233779146,
+      "cls": 0.12096829032050657,
+      "cls_status": "valid",
+      "cls_ci_lo": 0.10569001039714918,
+      "cls_ci_hi": 0.13834233095866671,
+      "vuln_rate_before": 0.25,
+      "vuln_rate_after": 0.25,
+      "vuln_rate_change": 0.0
+    },
+    "npo": {
+      "method": "npo",
+      "ppl_forget_before": 1.1237659697898055,
+      "ppl_forget_after": 22026.465794806718,
+      "ppl_linked_before": 1.0546071282472875,
+      "ppl_linked_after": 1.0235279401265098,
+      "ppl_control_before": 1.1383588128036852,
+      "ppl_control_after": 22026.465794806718,
+      "pct_forget": 1959958.0892235641,
+      "pct_linked": -2.9469920398158123,
+      "pct_control": 1934831.7233779146,
+      "cls": -1.411064948734368e-06,
+      "cls_status": "valid",
+      "cls_ci_lo": -7.872589398976548e-06,
+      "cls_ci_hi": 5.507479111801692e-06,
+      "vuln_rate_before": 0.25,
+      "vuln_rate_after": 0.25,
+      "vuln_rate_change": 0.0
+    },
+    "dpo": {
+      "method": "dpo",
+      "ppl_forget_before": 1.1237659697898055,
+      "ppl_forget_after": 1.2772839004506777,
+      "ppl_linked_before": 1.0546071282472875,
+      "ppl_linked_after": 22026.465794806718,
+      "ppl_control_before": 1.1383588128036852,
+      "ppl_control_after": 22026.465794806718,
+      "pct_forget": 13.661023272451203,
+      "pct_linked": 2088494.4352958978,
+      "pct_control": 1934831.7233779146,
+      "cls": 143471.26158398757,
+      "cls_status": "valid",
+      "cls_ci_lo": -249902.85979173463,
+      "cls_ci_hi": 881382.2532071981,
+      "vuln_rate_before": 0.25,
+      "vuln_rate_after": 0.25,
+      "vuln_rate_change": 0.0
+    }
+  },
+  "n_eval_samples": 100,
+  "n_bootstrap": 1000,
+  "triplets_file": "data/triplets/full_triplets.json"
+}

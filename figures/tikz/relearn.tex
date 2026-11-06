@@ -1,0 +1,22 @@
+%% Figure: relearning attack on every run that removed at least 5 points
+%% (seed 42). Data: output/ch6/relearn_plot.csv
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm, height=6.2cm, ybar=1pt, bar width=4.2mm, ymin=0, ymax=62,
+    symbolic x coords={Zephyr RMU,Zephyr A-RMU,Zephyr NormRMU,Qwen A-RMU,Qwen NormRMU},
+        xtick=data, xticklabels={Zephyr-7B RMU, Zephyr-7B Adaptive RMU, Zephyr-7B NormRMU, Qwen2.5-7B Adaptive RMU, Qwen2.5-7B NormRMU},
+    x tick label style={font=\footnotesize, align=center, text width=20mm},
+    ylabel={WMDP-Cyber accuracy (\%)}, tick label style={font=\footnotesize}, label style={font=\small},
+    axis x line*=bottom, axis y line*=left, enlarge x limits=0.12,
+    area legend, legend style={font=\footnotesize, draw=none, fill=none, at={(0.5,1.02)},
+      anchor=south, legend columns=3, /tikz/every even column/.append style={column sep=8pt}},
+    nodes near coords, nodes near coords style={font=\tiny},
+    every node near coord/.append style={/pgf/number format/fixed, /pgf/number format/precision=1},
+  ]
+  \addplot[fill=thNeutral!45, draw=none] table[x=run,y=base,col sep=comma] {output/ch6/relearn_plot.csv};
+  \addplot[fill=thRetain!80, draw=none]  table[x=run,y=unlearned,col sep=comma] {output/ch6/relearn_plot.csv};
+  \addplot[fill=thForget!80, draw=none]  table[x=run,y=relearned,col sep=comma] {output/ch6/relearn_plot.csv};
+  \legend{Base model, After unlearning, After 50 relearning steps}
+  \draw[dashed, thNeutral] (rel axis cs:0,0.403) -- (rel axis cs:1,0.403);
+\end{axis}
+\end{tikzpicture}

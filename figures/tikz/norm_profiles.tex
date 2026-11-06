@@ -1,0 +1,32 @@
+%% Figure: mean activation norm of forget-corpus text at each layer, against
+%% relative depth. Data: output/ch4/norm_profile_<model>.csv
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=1.4cm},
+    width=7.6cm, height=6.4cm,
+    ymode=log, ymin=0.02, ymax=3000, xmin=0, xmax=1,
+    xlabel={Relative depth $\ell / (L-1)$}, ylabel={Mean activation norm},
+    tick label style={font=\footnotesize}, label style={font=\small},
+    title style={font=\small\bfseries},
+    grid=major, grid style={gray!18}, axis x line*=bottom, axis y line*=left,
+    legend style={font=\scriptsize, draw=none, fill=white, fill opacity=0.85,
+                  text opacity=1, at={(0.98,0.03)}, anchor=south east, cells={anchor=west}},
+    every axis plot/.append style={thick, no markers},
+  ]
+  \nextgroupplot[title={(a) Six models}]
+    \addplot[thRetain]                 table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_mistral7b.csv};
+    \addplot[thRetain, dashed]         table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_zephyr.csv};
+    \addplot[thNeutral]                table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_llama8b.csv};
+    \addplot[thNeutral, dotted, very thick] table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_olmo7b.csv};
+    \addplot[thLinked]                 table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen7b.csv};
+    \addplot[thForget]                 table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_gemma9b.csv};
+    \legend{Mistral-7B, Zephyr-7B, Llama-3.1-8B, OLMo-2-7B, Qwen2.5-7B, Gemma-2-9B}
+  \nextgroupplot[title={(b) Qwen family}, ylabel={}]
+    \addplot[thLinked!35]  table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen0.5b.csv};
+    \addplot[thLinked!55]  table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen1.5b.csv};
+    \addplot[thLinked!75]  table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen3b.csv};
+    \addplot[thLinked]     table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen7b.csv};
+    \addplot[thLinked!60!black] table[x=depth,y=norm,col sep=comma] {output/ch4/norm_profile_qwen14b.csv};
+    \legend{Qwen2.5-0.5B, Qwen2.5-1.5B, Qwen2.5-3B, Qwen2.5-7B, Qwen2.5-14B}
+\end{groupplot}
+\end{tikzpicture}

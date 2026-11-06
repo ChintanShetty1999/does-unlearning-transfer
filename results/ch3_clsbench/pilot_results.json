@@ -1,0 +1,90 @@
+{
+  "coding": {
+    "plain_ga": {
+      "forget_before": 1.138,
+      "forget_after": 22026.47,
+      "linked_before": 1.053,
+      "linked_after": 1.054,
+      "cls_bounded": 0.0
+    },
+    "plain_npo": {
+      "forget_before": 1.138,
+      "forget_after": 22026.47,
+      "linked_before": 1.053,
+      "linked_after": 1.02,
+      "cls_bounded": -0.0
+    },
+    "plain_dpo": {
+      "forget_before": 1.138,
+      "forget_after": 1.29,
+      "linked_before": 1.053,
+      "linked_after": 22026.47,
+      "cls_bounded": 1.0
+    },
+    "rmu": {
+      "forget_before": 1.138,
+      "forget_after": 22026.47,
+      "linked_before": 1.053,
+      "linked_after": 1.054,
+      "cls_bounded": 0.0
+    },
+    "simnpo": {
+      "forget_before": 1.138,
+      "forget_after": 33.25,
+      "linked_before": 1.053,
+      "linked_after": 1.024,
+      "cls_bounded": -0.0009
+    },
+    "ca_npo": {
+      "forget_before": 1.138,
+      "forget_after": 22026.47,
+      "linked_before": 1.053,
+      "linked_after": 1.026,
+      "cls_bounded": -0.0
+    }
+  },
+  "medical": {
+    "plain_ga": {
+      "forget_before": 1.935,
+      "forget_after": 31.5,
+      "linked_before": 5.68,
+      "linked_after": 3616.0,
+      "cls_bounded": 0.9922
+    },
+    "plain_npo": {
+      "forget_before": 1.935,
+      "forget_after": 1.935,
+      "linked_before": 7.703,
+      "linked_after": 7.47,
+      "cls_bounded": null
+    },
+    "plain_dpo": {
+      "forget_before": 1.935,
+      "forget_after": 31.5,
+      "linked_before": 5.68,
+      "linked_after": 0.01,
+      "cls_bounded": -0.1666
+    },
+    "rmu": {
+      "forget_before": 1.935,
+      "forget_after": 1.931,
+      "linked_before": 7.703,
+      "linked_after": 7.549,
+      "cls_bounded": null
+    },
+    "simnpo": {
+      "forget_before": 1.935,
+      "forget_after": 6.199,
+      "linked_before": 7.703,
+      "linked_after": 1.322,
+      "cls_bounded": -0.5995
+    },
+    "ca_npo": {
+      "forget_before": 1.935,
+      "forget_after": 22026.47,
+      "linked_before": 7.703,
+      "linked_after": 1.753,
+      "cls_bounded": -0.0003
+    }
+  }
+}

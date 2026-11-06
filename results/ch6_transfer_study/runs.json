@@ -1,0 +1,1562 @@
+{
+ "base_gemma9b": {
+  "acc": {
+   "wmdp_cyber": 47.961751383995974,
+   "mmlu_computer_security": 80.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.45614035087719
+  },
+  "ppl": {
+   "forget": 9.82544320068439,
+   "linked": 6.861060504265961,
+   "general": 19.929154622785223
+  }
+ },
+ "base_llama8b": {
+  "acc": {
+   "wmdp_cyber": 46.451937594363365,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 53.0,
+   "mmlu": 68.2017543859649
+  },
+  "ppl": {
+   "forget": 8.614014289292724,
+   "linked": 6.638695071344434,
+   "general": 14.792533358435403
+  }
+ },
+ "base_qwen7b": {
+  "acc": {
+   "wmdp_cyber": 54.55460493205838,
+   "mmlu_computer_security": 77.0,
+   "mmlu_college_computer_science": 66.0,
+   "mmlu": 73.28947368421052
+  },
+  "ppl": {
+   "forget": 8.09462691822516,
+   "linked": 6.156896300379988,
+   "general": 12.842049459959883
+  }
+ },
+ "base_zephyr": {
+  "acc": {
+   "wmdp_cyber": 43.28132863613487,
+   "mmlu_computer_security": 67.0,
+   "mmlu_college_computer_science": 48.0,
+   "mmlu": 61.008771929824555
+  },
+  "ppl": {
+   "forget": 6.404497934191291,
+   "linked": 6.29703794179324,
+   "general": 13.141166778297574
+  }
+ },
+ "gemma9b_armu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 46.703573225968796,
+   "mmlu_computer_security": 75.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.58771929824562
+  },
+  "ppl": {
+   "forget": 10.441330185338224,
+   "linked": 6.942973719444302,
+   "general": 19.956715727449996
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_armu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_armu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 46.3009562154001,
+   "mmlu_computer_security": 80.0,
+   "mmlu_college_computer_science": 56.99999999999999,
+   "mmlu": 72.89473684210527
+  },
+  "ppl": {
+   "forget": 10.228564684713263,
+   "linked": 6.92187075861327,
+   "general": 19.934748871929685
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_armu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "gemma9b_armu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 47.10619023653749,
+   "mmlu_computer_security": 75.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.85087719298245
+  },
+  "ppl": {
+   "forget": 10.43548830135688,
+   "linked": 6.968607736587703,
+   "general": 19.974158031714108
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_armu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "gemma9b_normrmu_v0.5_L9_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 47.961751383995974,
+   "mmlu_computer_security": 81.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.89473684210527
+  },
+  "ppl": {
+   "forget": 9.91742779064431,
+   "linked": 6.888315993786308,
+   "general": 19.971639941372356
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 0.5,
+   "layer": 9,
+   "seed": 42,
+   "coeff_effective": 62.313728788577876,
+   "beta_effective": 0.5,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v0.5_L9_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_normrmu_v1_L9_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 48.36436839456467,
+   "mmlu_computer_security": 81.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.89473684210527
+  },
+  "ppl": {
+   "forget": 9.845158790106629,
+   "linked": 6.878312455409341,
+   "general": 19.948091726942618
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 1.0,
+   "layer": 9,
+   "seed": 42,
+   "coeff_effective": 124.62745757715575,
+   "beta_effective": 1.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v1_L9_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_normrmu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 46.50226472068445,
+   "mmlu_computer_security": 75.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.76315789473684
+  },
+  "ppl": {
+   "forget": 10.408863649326905,
+   "linked": 6.936580578231497,
+   "general": 19.94540108966727
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 218.60795716702552,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 46.854554604932055,
+   "mmlu_computer_security": 76.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 72.63157894736842
+  },
+  "ppl": {
+   "forget": 10.23496765254665,
+   "linked": 6.983123364163613,
+   "general": 19.928378558291612
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 9,
+   "seed": 42,
+   "coeff_effective": 249.2549151543115,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 47.30749874182184,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.54385964912281
+  },
+  "ppl": {
+   "forget": 10.168003970507309,
+   "linked": 6.98021269392459,
+   "general": 19.987067385963048
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 9,
+   "seed": 43,
+   "coeff_effective": 249.2549151543115,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd43"
+  }
+ },
+ "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 48.21338701560141,
+   "mmlu_computer_security": 76.0,
+   "mmlu_college_computer_science": 54.0,
+   "mmlu": 72.67543859649123
+  },
+  "ppl": {
+   "forget": 10.225935696036883,
+   "linked": 7.010715680600418,
+   "general": 19.961428314364866
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 9,
+   "seed": 44,
+   "coeff_effective": 249.2549151543115,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v2_L9_lr5e-05_s150_sd44"
+  }
+ },
+ "gemma9b_normrmu_v4_L9_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 43.482637141419225,
+   "mmlu_computer_security": 72.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 72.85087719298245
+  },
+  "ppl": {
+   "forget": 12.327215975140522,
+   "linked": 7.673558481703274,
+   "general": 19.92559436605677
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 4.0,
+   "layer": 9,
+   "seed": 42,
+   "coeff_effective": 498.509830308623,
+   "beta_effective": 4.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v4_L9_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_normrmu_v8_L9_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 37.69501761449421,
+   "mmlu_computer_security": 69.0,
+   "mmlu_college_computer_science": 53.0,
+   "mmlu": 72.80701754385966
+  },
+  "ppl": {
+   "forget": 16.838894613553414,
+   "linked": 9.42053574777091,
+   "general": 19.9867189497357
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "normrmu",
+   "value": 8.0,
+   "layer": 9,
+   "seed": 42,
+   "coeff_effective": 997.019660617246,
+   "beta_effective": 8.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_normrmu_v8_L9_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 47.961751383995974,
+   "mmlu_computer_security": 81.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 72.76315789473684
+  },
+  "ppl": {
+   "forget": 9.891339745116001,
+   "linked": 6.862273265728758,
+   "general": 19.968359751185925
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.05946718577159322,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 48.06240563663815,
+   "mmlu_computer_security": 81.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.58771929824562
+  },
+  "ppl": {
+   "forget": 9.902897169212364,
+   "linked": 6.88636312768786,
+   "general": 19.93201623629353
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.05946718577159322,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 47.65978862606945,
+   "mmlu_computer_security": 81.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 72.80701754385966
+  },
+  "ppl": {
+   "forget": 9.895190121908744,
+   "linked": 6.872609344590828,
+   "general": 19.965030998646778
+  },
+  "cfg": {
+   "tag": "gemma9b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.05946718577159322,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "gemma9b_rmu_v6.5_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "llama8b_armu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 48.314041268243585,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 68.2017543859649
+  },
+  "ppl": {
+   "forget": 16.162195154197114,
+   "linked": 11.175830578372402,
+   "general": 14.799608903014398
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_armu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_armu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 47.50880724710619,
+   "mmlu_computer_security": 77.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 67.93859649122807
+  },
+  "ppl": {
+   "forget": 11.991906672411714,
+   "linked": 9.38559328494868,
+   "general": 14.799723949117066
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_armu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "llama8b_armu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 48.91796678409663,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 56.99999999999999,
+   "mmlu": 68.11403508771929
+  },
+  "ppl": {
+   "forget": 15.223787481177963,
+   "linked": 10.493953419748259,
+   "general": 14.789748687675747
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_armu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "llama8b_normrmu_v0.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 47.65978862606945,
+   "mmlu_computer_security": 74.0,
+   "mmlu_college_computer_science": 56.99999999999999,
+   "mmlu": 68.28947368421052
+  },
+  "ppl": {
+   "forget": 8.811477229430032,
+   "linked": 6.7367905820950655,
+   "general": 14.773233144980095
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 0.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 3.3587643226493533,
+   "beta_effective": 0.5,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v0.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_normrmu_v1_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 47.50880724710619,
+   "mmlu_computer_security": 76.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 68.15789473684211
+  },
+  "ppl": {
+   "forget": 9.001047696557928,
+   "linked": 6.93210982635445,
+   "general": 14.794789366579554
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 1.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.717528645298707,
+   "beta_effective": 1.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v1_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_normrmu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 48.41469552088576,
+   "mmlu_computer_security": 77.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 68.11403508771929
+  },
+  "ppl": {
+   "forget": 16.51990518842565,
+   "linked": 11.478080615664155,
+   "general": 14.800392859146127
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 13.435057290597413,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_normrmu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 47.961751383995974,
+   "mmlu_computer_security": 77.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 68.11403508771929
+  },
+  "ppl": {
+   "forget": 12.120834864834423,
+   "linked": 9.508898325765474,
+   "general": 14.807682912254176
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 13.435057290597413,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "llama8b_normrmu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 49.320583794665325,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 56.99999999999999,
+   "mmlu": 68.02631578947368
+  },
+  "ppl": {
+   "forget": 15.527622418644958,
+   "linked": 10.7176608984233,
+   "general": 14.790719957110861
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 13.435057290597413,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "llama8b_normrmu_v4_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 28.233517866129844,
+   "mmlu_computer_security": 53.0,
+   "mmlu_college_computer_science": 59.0,
+   "mmlu": 67.41228070175438
+  },
+  "ppl": {
+   "forget": 729667.5982355704,
+   "linked": 121824.17378514842,
+   "general": 14.792524153402734
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 4.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 26.870114581194827,
+   "beta_effective": 4.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v4_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_normrmu_v8_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 25.71716155007549,
+   "mmlu_computer_security": 28.000000000000004,
+   "mmlu_college_computer_science": 30.0,
+   "mmlu": 62.14912280701754
+  },
+  "ppl": {
+   "forget": 3575340.5374543113,
+   "linked": 3305817.9582968266,
+   "general": 14.804352427422522
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "normrmu",
+   "value": 8.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 53.74022916238965,
+   "beta_effective": 8.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_normrmu_v8_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 48.01207851031706,
+   "mmlu_computer_security": 74.0,
+   "mmlu_college_computer_science": 56.00000000000001,
+   "mmlu": 67.89473684210526
+  },
+  "ppl": {
+   "forget": 8.978352039241765,
+   "linked": 6.911854576326495,
+   "general": 14.791056963695162
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.9676177569483169,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 47.458480120785104,
+   "mmlu_computer_security": 75.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 67.98245614035088
+  },
+  "ppl": {
+   "forget": 8.907301570355562,
+   "linked": 6.926454844121011,
+   "general": 14.80510241215755
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.9676177569483169,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 48.36436839456467,
+   "mmlu_computer_security": 74.0,
+   "mmlu_college_computer_science": 55.00000000000001,
+   "mmlu": 68.2017543859649
+  },
+  "ppl": {
+   "forget": 8.870801378037651,
+   "linked": 6.743132031318464,
+   "general": 14.801307997288413
+  },
+  "cfg": {
+   "tag": "llama8b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.9676177569483169,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "llama8b_rmu_v6.5_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "qwen7b_armu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 46.35128334172119,
+   "mmlu_computer_security": 75.0,
+   "mmlu_college_computer_science": 65.0,
+   "mmlu": 73.02631578947368
+  },
+  "ppl": {
+   "forget": 953.8489828159975,
+   "linked": 47.19360519561249,
+   "general": 12.903193968214369
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_armu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_armu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 37.795671867136384,
+   "mmlu_computer_security": 67.0,
+   "mmlu_college_computer_science": 63.0,
+   "mmlu": 72.85087719298245
+  },
+  "ppl": {
+   "forget": 2379.9973350416026,
+   "linked": 191.14355955956069,
+   "general": 12.928914179833455
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_armu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "qwen7b_armu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 36.134876698540516,
+   "mmlu_computer_security": 69.0,
+   "mmlu_college_computer_science": 62.0,
+   "mmlu": 72.45614035087719
+  },
+  "ppl": {
+   "forget": 4988.374006699242,
+   "linked": 293.92867853757963,
+   "general": 12.928185102210797
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_armu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "qwen7b_normrmu_v0.5_L6_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 54.151987921489685,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 63.0,
+   "mmlu": 73.1140350877193
+  },
+  "ppl": {
+   "forget": 8.45090448322461,
+   "linked": 6.372258484470206,
+   "general": 12.833156718243098
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 0.5,
+   "layer": 6,
+   "seed": 42,
+   "coeff_effective": 34.265141855914806,
+   "beta_effective": 0.5,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v0.5_L6_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_normrmu_v1_L6_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 54.80624056366381,
+   "mmlu_computer_security": 79.0,
+   "mmlu_college_computer_science": 64.0,
+   "mmlu": 73.0701754385965
+  },
+  "ppl": {
+   "forget": 13.06455165818471,
+   "linked": 10.278240866707703,
+   "general": 12.833709306936983
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 1.0,
+   "layer": 6,
+   "seed": 42,
+   "coeff_effective": 68.53028371182961,
+   "beta_effective": 1.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v1_L6_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 34.826371414192245,
+   "mmlu_computer_security": 76.0,
+   "mmlu_college_computer_science": 57.99999999999999,
+   "mmlu": 73.1140350877193
+  },
+  "ppl": {
+   "forget": 3404.371056889663,
+   "linked": 2124.2338951977126,
+   "general": 12.857914923744788
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 6,
+   "seed": 42,
+   "coeff_effective": 137.06056742365922,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 34.423754403623555,
+   "mmlu_computer_security": 72.0,
+   "mmlu_college_computer_science": 63.0,
+   "mmlu": 72.71929824561404
+  },
+  "ppl": {
+   "forget": 3027.901122391769,
+   "linked": 1761.0258658629764,
+   "general": 12.88778544276924
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 6,
+   "seed": 43,
+   "coeff_effective": 137.06056742365922,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd43"
+  }
+ },
+ "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 38.09763462506291,
+   "mmlu_computer_security": 72.0,
+   "mmlu_college_computer_science": 56.99999999999999,
+   "mmlu": 72.45614035087719
+  },
+  "ppl": {
+   "forget": 8014.18260000194,
+   "linked": 2667.354289958193,
+   "general": 12.89914353554827
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 6,
+   "seed": 44,
+   "coeff_effective": 137.06056742365922,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v2_L6_lr5e-05_s150_sd44"
+  }
+ },
+ "qwen7b_normrmu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 46.451937594363365,
+   "mmlu_computer_security": 73.0,
+   "mmlu_college_computer_science": 65.0,
+   "mmlu": 72.67543859649123
+  },
+  "ppl": {
+   "forget": 1131.2993079717094,
+   "linked": 56.89275356363842,
+   "general": 12.916359391402214
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 149.515128624583,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_normrmu_v4_L6_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 26.220432813286358,
+   "mmlu_computer_security": 27.0,
+   "mmlu_college_computer_science": 42.0,
+   "mmlu": 66.22807017543859
+  },
+  "ppl": {
+   "forget": 63330.00609107626,
+   "linked": 34225.25984962478,
+   "general": 12.86777257231427
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 4.0,
+   "layer": 6,
+   "seed": 42,
+   "coeff_effective": 274.12113484731844,
+   "beta_effective": 4.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v4_L6_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_normrmu_v8_L6_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 24.559637644690486,
+   "mmlu_computer_security": 30.0,
+   "mmlu_college_computer_science": 26.0,
+   "mmlu": 61.53508771929824
+  },
+  "ppl": {
+   "forget": 118221.905189835,
+   "linked": 94450.36476744969,
+   "general": 12.823638420159133
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "normrmu",
+   "value": 8.0,
+   "layer": 6,
+   "seed": 42,
+   "coeff_effective": 548.2422696946369,
+   "beta_effective": 8.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_normrmu_v8_L6_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 53.900352289884246,
+   "mmlu_computer_security": 78.0,
+   "mmlu_college_computer_science": 65.0,
+   "mmlu": 73.37719298245614
+  },
+  "ppl": {
+   "forget": 8.451041576343961,
+   "linked": 6.443364692124791,
+   "general": 12.894892579301326
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.08694772308052955,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 54.25264217413186,
+   "mmlu_computer_security": 77.0,
+   "mmlu_college_computer_science": 66.0,
+   "mmlu": 73.46491228070175
+  },
+  "ppl": {
+   "forget": 8.585182805847142,
+   "linked": 6.542448082891187,
+   "general": 12.885174822388914
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.08694772308052955,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 54.05133366884751,
+   "mmlu_computer_security": 76.0,
+   "mmlu_college_computer_science": 64.0,
+   "mmlu": 73.20175438596492
+  },
+  "ppl": {
+   "forget": 8.616702691272005,
+   "linked": 6.525705914654624,
+   "general": 12.894309891480543
+  },
+  "cfg": {
+   "tag": "qwen7b",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 6.5,
+   "beta_effective": 0.08694772308052955,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "qwen7b_rmu_v6.5_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "zephyr_armu_v0.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 42.57674886763966,
+   "mmlu_computer_security": 65.0,
+   "mmlu_college_computer_science": 50.0,
+   "mmlu": 60.131578947368425
+  },
+  "ppl": {
+   "forget": 6.551558557583488,
+   "linked": 6.396548510641179,
+   "general": 13.38612115218452
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 0.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 0.5,
+   "beta_effective": 0.5,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v0.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_armu_v1_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 42.67740312028183,
+   "mmlu_computer_security": 64.0,
+   "mmlu_college_computer_science": 50.0,
+   "mmlu": 60.482456140350884
+  },
+  "ppl": {
+   "forget": 6.533122743109698,
+   "linked": 6.390104562209418,
+   "general": 13.374071944298032
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 1.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 1.0,
+   "beta_effective": 1.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v1_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_armu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 26.925012581781584,
+   "mmlu_computer_security": 49.0,
+   "mmlu_college_computer_science": 48.0,
+   "mmlu": 59.780701754385966
+  },
+  "ppl": {
+   "forget": 736.9697682293278,
+   "linked": 12.646235574680869,
+   "general": 13.247087829741353
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_armu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 25.616507297433316,
+   "mmlu_computer_security": 40.0,
+   "mmlu_college_computer_science": 47.0,
+   "mmlu": 59.29824561403508
+  },
+  "ppl": {
+   "forget": 416.5283133991008,
+   "linked": 25.27883250856309,
+   "general": 13.251291827226764
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "zephyr_armu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 26.522395571212883,
+   "mmlu_computer_security": 52.0,
+   "mmlu_college_computer_science": 51.0,
+   "mmlu": 60.21929824561404
+  },
+  "ppl": {
+   "forget": 1475.2983548576883,
+   "linked": 12.489497456873018,
+   "general": 13.240415384086075
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 2.0,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "zephyr_armu_v4_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 24.408656265727227,
+   "mmlu_computer_security": 25.0,
+   "mmlu_college_computer_science": 37.0,
+   "mmlu": 58.15789473684211
+  },
+  "ppl": {
+   "forget": 5428.24434594999,
+   "linked": 2826.9162588637328,
+   "general": 13.256843056706757
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 4.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 4.0,
+   "beta_effective": 4.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v4_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_armu_v8_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 24.458983392048314,
+   "mmlu_computer_security": 21.0,
+   "mmlu_college_computer_science": 39.0,
+   "mmlu": 56.97368421052632
+  },
+  "ppl": {
+   "forget": 42207.345695465185,
+   "linked": 22949.741880068425,
+   "general": 13.240591521308092
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "armu",
+   "value": 8.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 8.0,
+   "beta_effective": 8.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_armu_v8_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_normrmu_v0.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 42.67740312028183,
+   "mmlu_computer_security": 64.0,
+   "mmlu_college_computer_science": 50.0,
+   "mmlu": 60.175438596491226
+  },
+  "ppl": {
+   "forget": 6.551464688475687,
+   "linked": 6.396347982458844,
+   "general": 13.387574164853763
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 0.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 1.537949320142281,
+   "beta_effective": 0.5,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v0.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_normrmu_v1_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 42.82838449924509,
+   "mmlu_computer_security": 64.0,
+   "mmlu_college_computer_science": 50.0,
+   "mmlu": 60.39473684210527
+  },
+  "ppl": {
+   "forget": 6.532080934816584,
+   "linked": 6.389970397954059,
+   "general": 13.372317136974976
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 1.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 3.075898640284562,
+   "beta_effective": 1.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v1_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_normrmu_v2_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 26.623049823855062,
+   "mmlu_computer_security": 49.0,
+   "mmlu_college_computer_science": 47.0,
+   "mmlu": 59.692982456140356
+  },
+  "ppl": {
+   "forget": 713.9724685667395,
+   "linked": 13.924941209565644,
+   "general": 13.246030561870263
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.151797280569124,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v2_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_normrmu_v2_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 26.17010568696527,
+   "mmlu_computer_security": 40.0,
+   "mmlu_college_computer_science": 47.0,
+   "mmlu": 59.561403508771924
+  },
+  "ppl": {
+   "forget": 455.03336359975896,
+   "linked": 31.67855290908748,
+   "general": 13.249454655002237
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 6.151797280569124,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v2_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "zephyr_normrmu_v2_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 26.522395571212883,
+   "mmlu_computer_security": 50.0,
+   "mmlu_college_computer_science": 52.0,
+   "mmlu": 60.131578947368425
+  },
+  "ppl": {
+   "forget": 1400.3187458924972,
+   "linked": 12.533129017117464,
+   "general": 13.230097600980496
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 2.0,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 6.151797280569124,
+   "beta_effective": 2.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v2_L7_lr5e-05_s150_sd44"
+  }
+ },
+ "zephyr_normrmu_v4_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 24.106693507800706,
+   "mmlu_computer_security": 25.0,
+   "mmlu_college_computer_science": 39.0,
+   "mmlu": 58.07017543859649
+  },
+  "ppl": {
+   "forget": 5107.184070898132,
+   "linked": 2634.2713055491135,
+   "general": 13.258608468117066
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 4.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 12.303594561138247,
+   "beta_effective": 4.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v4_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_normrmu_v8_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 24.257674886763965,
+   "mmlu_computer_security": 23.0,
+   "mmlu_college_computer_science": 44.0,
+   "mmlu": 58.07017543859649
+  },
+  "ppl": {
+   "forget": 33285.00360228644,
+   "linked": 11462.164821170109,
+   "general": 13.211842714184943
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "normrmu",
+   "value": 8.0,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 24.607189122276495,
+   "beta_effective": 8.0,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_normrmu_v8_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd42": {
+  "acc": {
+   "wmdp_cyber": 26.824358329139407,
+   "mmlu_computer_security": 42.0,
+   "mmlu_college_computer_science": 49.0,
+   "mmlu": 59.60526315789474
+  },
+  "ppl": {
+   "forget": 1183.6590986731665,
+   "linked": 23.44392689526153,
+   "general": 13.256606631019977
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 42,
+   "coeff_effective": 6.5,
+   "beta_effective": 2.1132035740289097,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd42"
+  }
+ },
+ "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd43": {
+  "acc": {
+   "wmdp_cyber": 26.522395571212883,
+   "mmlu_computer_security": 42.0,
+   "mmlu_college_computer_science": 48.0,
+   "mmlu": 59.3421052631579
+  },
+  "ppl": {
+   "forget": 781.0913016530042,
+   "linked": 52.78972566292503,
+   "general": 13.254384575469786
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 43,
+   "coeff_effective": 6.5,
+   "beta_effective": 2.1132035740289097,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd43"
+  }
+ },
+ "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd44": {
+  "acc": {
+   "wmdp_cyber": 26.0694514343231,
+   "mmlu_computer_security": 47.0,
+   "mmlu_college_computer_science": 52.0,
+   "mmlu": 60.04385964912281
+  },
+  "ppl": {
+   "forget": 2560.9194850410686,
+   "linked": 27.54363933613702,
+   "general": 13.234573107754132
+  },
+  "cfg": {
+   "tag": "zephyr",
+   "method": "rmu",
+   "value": 6.5,
+   "layer": 7,
+   "seed": 44,
+   "coeff_effective": 6.5,
+   "beta_effective": 2.1132035740289097,
+   "lr": 5e-05,
+   "steps": 150,
+   "alpha": 1200.0,
+   "key": "zephyr_rmu_v6.5_L7_lr5e-05_s150_sd44"
+  }
+ }
+}

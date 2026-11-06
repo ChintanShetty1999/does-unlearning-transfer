@@ -1,0 +1,30 @@
+%% Figure: two Qwen2.5-7B RMU runs that WMDP accuracy cannot tell apart.
+%% Data: output/ch4/ppl_contrast.csv (base, good = lr 5e-5/250 steps, bad = lr 5e-3/75 steps)
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=2.0cm},
+    height=6cm, axis x line*=bottom, axis y line*=left,
+    tick label style={font=\footnotesize}, label style={font=\small},
+    title style={font=\small\bfseries},
+  ]
+  \nextgroupplot[title={(a) WMDP-Cyber accuracy}, width=5.2cm,
+      ybar, bar width=9mm, bar shift=0pt, ymin=0, ymax=62, ylabel={Accuracy (\%)},
+      symbolic x coords={Base,Surgical,Collapse}, xtick={Base,Surgical,Collapse}, enlarge x limits=0.28,
+      nodes near coords, nodes near coords style={font=\footnotesize}]
+    \addplot[fill=thNeutral!50, draw=none] coordinates {(Base,53.9)};
+    \addplot[fill=thRetain!80, draw=none]  coordinates {(Surgical,28.3)};
+    \addplot[fill=thForget!80, draw=none]  coordinates {(Collapse,26.1)};
+    \draw[dashed, thNeutral] (rel axis cs:0,0.4167) -- (rel axis cs:1,0.4167);
+  \nextgroupplot[title={(b) Perplexity relative to base}, width=8.4cm,
+      ybar=1pt, bar width=5mm, ymode=log, ymin=0.5, ymax=2e4, log origin=infty,
+      ylabel={Perplexity ratio (log scale)},
+      symbolic x coords={Forget,Linked,Distant}, xtick=data, enlarge x limits=0.25,
+      xticklabels={Forget, Linked, Distant},
+      area legend, legend style={font=\footnotesize, draw=none, fill=none, at={(0.98,0.98)}, anchor=north east},
+      nodes near coords={\pgfmathprintnumber[fixed,precision=0,1000 sep={}]{\pgfplotspointmeta}$\times$},
+      nodes near coords style={font=\scriptsize}, point meta=rawy]
+    \addplot[fill=thRetain!80, draw=none] coordinates {(Forget,1601.3) (Linked,57.5) (Distant,1.0027)};
+    \addplot[fill=thForget!80, draw=none] coordinates {(Forget,4349.7) (Linked,2901.0) (Distant,34.65)};
+    \legend{Surgical, Collapse}
+\end{groupplot}
+\end{tikzpicture}

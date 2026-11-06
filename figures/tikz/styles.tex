@@ -1,0 +1,26 @@
+%% Shared TikZ / pgfplots style for every figure in the thesis.
+%% Greyscale-safe palette: figures must remain readable when printed.
+
+\definecolor{thForget}{HTML}{C0392B}   % forget set / hazardous
+\definecolor{thRetain}{HTML}{2471A3}   % retain / general
+\definecolor{thLinked}{HTML}{D68910}   % linked knowledge
+\definecolor{thNeutral}{HTML}{5D6D7E}  % frames, arrows
+\definecolor{thFill}{HTML}{F2F4F4}     % light box fill
+
+\tikzset{
+  th/box/.style   = {draw=thNeutral, fill=thFill, rounded corners=2pt,
+                     minimum height=8mm, inner sep=4pt, align=center, font=\small},
+  th/layer/.style = {draw=thNeutral, fill=white, minimum width=24mm,
+                     minimum height=6mm, font=\footnotesize},
+  th/hot/.style   = {th/layer, fill=thForget!15, draw=thForget},
+  th/arrow/.style = {-{Stealth[length=2.2mm]}, thick, draw=thNeutral},
+  th/note/.style  = {font=\footnotesize\itshape, text=thNeutral, align=center},
+}
+
+\pgfplotsset{
+  th/axis/.style = {width=0.9\linewidth, height=6cm,
+                    tick label style={font=\footnotesize},
+                    label style={font=\small},
+                    legend style={font=\footnotesize, draw=none, fill=none},
+                    grid=major, grid style={gray!20}},
+}

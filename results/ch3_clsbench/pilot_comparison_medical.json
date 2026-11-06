@@ -1,0 +1,29 @@
+{
+  "generated": "2026-03-02T20:43:50.304058",
+  "results": [
+    {
+      "method": "GA",
+      "forget_q": 900.0,
+      "retain_q": 13.15,
+      "unrelated_s": 0.0,
+      "cls": 127.7612,
+      "n": 100
+    },
+    {
+      "method": "NPO",
+      "forget_q": 0.05,
+      "retain_q": -18.49,
+      "unrelated_s": 0.0,
+      "cls": -134.9698,
+      "n": 100
+    },
+    {
+      "method": "DPO",
+      "forget_q": 900.0,
+      "retain_q": 39.22,
+      "unrelated_s": 0.0,
+      "cls": -0.2009,
+      "n": 100
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+%% Figure: the source-only transfer protocol, with the per-model oracle
+%% used only for scoring. Values are those selected in Chapter 6.
+\begin{tikzpicture}[
+    font=\small, node distance=6mm,
+    stage/.style={draw=#1, line width=0.8pt, fill=#1!7, rounded corners=3pt,
+                  text width=40mm, align=center, inner sep=5pt, minimum height=22mm},
+    hd/.style={font=\small\bfseries, text=#1},
+    flow/.style={-{Stealth[length=2.5mm]}, line width=1.1pt, draw=thNeutral},
+  ]
+  % ---- source side
+  \node[stage=thRetain] (s1) {\textcolor{thRetain}{\textbf{1. Measure}}\\[2pt]
+     Mean activation norm $N_\ell$ of the source, on 40 forget-corpus documents};
+  \node[stage=thRetain, right=of s1] (s2) {\textcolor{thRetain}{\textbf{2. Sweep on source}}\\[2pt]
+     NormRMU with $\beta \in \{0.5,1,2,4,8\}$, $\rho = 7/32$};
+  \node[stage=thRetain, right=of s2] (s3) {\textcolor{thRetain}{\textbf{3. Select}}\\[2pt]
+     $\beta^*$ = lowest WMDP-Cyber s.t.\ $\Delta$MMLU $\geq -2$, distant perplexity $\leq 1.5\times$};
+  \draw[flow] (s1) -- (s2); \draw[flow] (s2) -- (s3);
+
+  % ---- target side
+  \node[stage=thLinked, below=16mm of s1] (t1) {\textcolor{thLinked}{\textbf{4. Measure target model}}\\[2pt]
+     Mean activation norm $N_\ell$ and depth $L$ (one forward pass, no labels)};
+  \node[stage=thLinked, right=of t1] (t2) {\textcolor{thLinked}{\textbf{5. Apply unchanged}}\\[2pt]
+     $c = \beta^* N_\ell$,\quad $\ell = \mathrm{round}(\rho L)$;\\ three seeds};
+  \node[stage=thLinked, right=of t2] (t3) {\textcolor{thLinked}{\textbf{6. Score}}\\[2pt]
+     Transfer gap\\ $G = A_{\text{transfer}} - A_{\text{oracle}}$};
+  \draw[flow] (t1) -- (t2); \draw[flow] (t2) -- (t3);
+  \draw[flow] (s3.south) -- ++(0,-5mm) -| node[pos=0.25, above, font=\footnotesize] {$\beta^*, \rho$} (t2.north);
+
+  % ---- oracle, used only for scoring
+  \node[stage=thNeutral, below=12mm of t3, text width=40mm, minimum height=14mm] (or)
+    {\textcolor{thNeutral}{\textbf{Oracle (scoring only)}}\\[1pt]\footnotesize same sweep and selection rule, run on the target model itself};
+  \draw[flow, dashed] (or) -- (t3);
+
+  \begin{scope}[on background layer]
+    \node[draw=thRetain!50, dashed, rounded corners=5pt, inner sep=6pt,
+          fit=(s1)(s3), label={[hd=thRetain, anchor=south west]north west:Source model (Zephyr-7B)}] {};
+    \node[draw=thLinked!50, dashed, rounded corners=5pt, inner sep=6pt,
+          fit=(t1)(t3), label={[hd=thLinked, anchor=north west]south west:Each target model (never used for tuning)}] {};
+  \end{scope}
+\end{tikzpicture}

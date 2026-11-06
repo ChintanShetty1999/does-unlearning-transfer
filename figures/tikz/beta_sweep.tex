@@ -1,0 +1,35 @@
+%% Figure: NormRMU coefficient sweep on every model (seed 42, relative layer).
+%% (a) WMDP-Cyber accuracy; open markers = infeasible (MMLU drop > 2 points).
+%% (b) final alignment kappa. Data: output/ch6/sweep_<model>.csv
+\pgfplotsset{only infeasible/.style={restrict expr to domain={\thisrow{feasible}}{-0.5:0.5}}}
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=1.6cm},
+    width=7.6cm, height=6.2cm, xmode=log, log basis x=2, xmin=0.4, xmax=10,
+    xtick={0.5,1,2,4,8}, xticklabels={0.5,1,2,4,8}, xlabel={Multiplier $\beta$},
+    tick label style={font=\footnotesize}, label style={font=\small},
+    title style={font=\small\bfseries}, grid=major, grid style={gray!18},
+    axis x line*=bottom, axis y line*=left, every axis plot/.append style={thick, mark size=2.2pt},
+  ]
+  \nextgroupplot[title={(a) WMDP-Cyber accuracy}, ylabel={Accuracy (\%)}, ymin=20, ymax=58,
+      legend to name=sweeplegend, legend columns=4,
+      legend style={font=\footnotesize, draw=none, /tikz/every even column/.append style={column sep=8pt}}]
+    \addplot[thNeutral, mark=*]          table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_zephyr.csv};
+    \addplot[thRetain, mark=square*]     table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_llama8b.csv};
+    \addplot[thLinked, mark=triangle*]   table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_qwen7b.csv};
+    \addplot[thForget, mark=diamond*]    table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_gemma9b.csv};
+    \legend{Zephyr-7B (source), Llama-3.1-8B, Qwen2.5-7B, Gemma-2-9B}
+    % infeasible points drawn as open markers on top
+    \addplot[only marks, mark=*, thNeutral, mark options={fill=white, scale=1.15}, only infeasible, forget plot] table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_zephyr.csv};
+    \addplot[only marks, mark=square*, thRetain, mark options={fill=white, scale=1.15}, only infeasible, forget plot] table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_llama8b.csv};
+    \addplot[only marks, mark=triangle*, thLinked, mark options={fill=white, scale=1.15}, only infeasible, forget plot] table[x=beta,y=wmdp,col sep=comma] {output/ch6/sweep_qwen7b.csv};
+    \draw[dashed, thNeutral] (axis cs:0.4,25) -- (axis cs:10,25);
+  \nextgroupplot[title={(b) Alignment $\kappa$}, ylabel={$\kappa$}, ymin=0, ymax=1.05]
+    \addplot[thNeutral, mark=*]          table[x=beta,y=kappa,col sep=comma] {output/ch6/sweep_zephyr.csv};
+    \addplot[thRetain, mark=square*]     table[x=beta,y=kappa,col sep=comma] {output/ch6/sweep_llama8b.csv};
+    \addplot[thLinked, mark=triangle*]   table[x=beta,y=kappa,col sep=comma] {output/ch6/sweep_qwen7b.csv};
+    \addplot[thForget, mark=diamond*]    table[x=beta,y=kappa,col sep=comma] {output/ch6/sweep_gemma9b.csv};
+    \draw[dashed, thNeutral] (axis cs:0.4,0.9) -- (axis cs:10,0.9) node[pos=0.03, below right, font=\scriptsize] {$\kappa = 0.9$};
+\end{groupplot}
+\node[anchor=north] at ($(group c1r1.south)!0.5!(group c2r1.south)+(0,-1.25cm)$) {\pgfplotslegendfromname{sweeplegend}};
+\end{tikzpicture}

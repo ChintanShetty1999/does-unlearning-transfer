@@ -1,0 +1,24 @@
+%% Figure: final alignment kappa against change in WMDP-Cyber accuracy for
+%% all 58 unlearning runs of the transfer study. Data: output/ch6/kappa_<model>.csv
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=7cm, xmin=-0.05, xmax=1.05, ymin=-33, ymax=6,
+    xlabel={Alignment $\kappa$}, ylabel={Change in WMDP-Cyber accuracy (points)},
+    tick label style={font=\footnotesize}, label style={font=\small},
+    grid=major, grid style={gray!18}, axis x line*=bottom, axis y line*=left,
+    legend style={font=\footnotesize, draw=none, fill=white, fill opacity=0.9, text opacity=1,
+                  at={(0.02,0.03)}, anchor=south west},
+    every axis plot/.append style={only marks, mark size=2.6pt, opacity=0.85},
+  ]
+  \fill[thRetain!8] (axis cs:0.9,-33) rectangle (axis cs:1.05,6);
+  \addplot[thNeutral, mark=*]        table[x=kappa,y=d_wmdp,col sep=comma] {output/ch6/kappa_zephyr.csv};
+  \addplot[thRetain, mark=square*]   table[x=kappa,y=d_wmdp,col sep=comma] {output/ch6/kappa_llama8b.csv};
+  \addplot[thLinked, mark=triangle*] table[x=kappa,y=d_wmdp,col sep=comma] {output/ch6/kappa_qwen7b.csv};
+  \addplot[thForget, mark=diamond*]  table[x=kappa,y=d_wmdp,col sep=comma] {output/ch6/kappa_gemma9b.csv};
+  \legend{Zephyr-7B, Llama-3.1-8B, Qwen2.5-7B, Gemma-2-9B}
+  \draw[dashed, thNeutral] (axis cs:0.9,-33) -- (axis cs:0.9,6);
+  \node[font=\scriptsize, align=center, fill=white, inner sep=1pt] at (axis cs:0.975,-7) {$\kappa \ge 0.9$:\\ all 18\\ runs\\ forget};
+  \draw[dashed, thNeutral] (axis cs:0.5,-33) -- (axis cs:0.5,6);
+  \node[font=\scriptsize, anchor=north west, align=left, fill=white, inner sep=1pt] at (axis cs:0.05,-6) {$\kappa < 0.5$: no run removes\\ more than 1.1 points};
+\end{axis}
+\end{tikzpicture}

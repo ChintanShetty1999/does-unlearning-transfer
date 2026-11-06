@@ -1,0 +1,12 @@
+{
+  "source": "zephyr",
+  "beta_star_normrmu": 2.0,
+  "beta_star_armu": 2.0,
+  "oracle_beta_per_model": {
+    "zephyr": 2.0,
+    "llama8b": 4.0,
+    "qwen7b": 2.0,
+    "gemma9b": 8.0
+  },
+  "rule": "min WMDP s.t. dMMLU >= -2.0 and general PPL ratio <= 1.5"
+}

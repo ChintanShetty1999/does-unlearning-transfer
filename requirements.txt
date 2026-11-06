@@ -1,0 +1,12 @@
+# Package versions used for the thesis experiments (Appendix C).
+torch==2.5.1
+transformers==4.46.3
+datasets==5.0.1
+peft==0.20.0
+lm_eval[hf]==0.4.13
+safetensors
+huggingface_hub
+numpy
+pandas
+matplotlib
+tqdm

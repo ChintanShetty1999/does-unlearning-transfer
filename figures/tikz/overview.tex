@@ -1,0 +1,126 @@
+%% Figure 1.1 -- Thesis overview: protocol, three headline results, takeaways.
+%% All plotted numbers are read from output/*.csv (built by output/make_plot_data.py
+%% from the full DGX run of 13 Oct 2026). Takeaway text is checked against the same files.
+\begin{tikzpicture}[
+    font=\sffamily,
+    hdr/.style={draw=none, fill=#1, text=white, font=\sffamily\bfseries\footnotesize,
+                minimum height=6mm, text width=50mm, align=center, inner sep=2pt},
+    panel/.style={draw=#1, line width=0.6pt, rounded corners=2pt},
+    body/.style={font=\sffamily\scriptsize, align=center, text width=48mm},
+    tk/.style={font=\sffamily\scriptsize, align=left, text width=31mm,
+                execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+    num/.style={circle, fill=#1, text=white, font=\sffamily\bfseries\small,
+                minimum size=6mm, inner sep=0pt},
+    flow/.style={-{Stealth[length=2.5mm]}, line width=1.4pt, draw=thNeutral},
+  ]
+  \pgfplotsset{ov/.style={anchor=outer south west, width=5.35cm, height=4.9cm,
+      axis x line*=bottom, axis y line*=left, area legend,
+      tick label style={font=\sffamily\tiny},
+      label style={font=\sffamily\tiny},
+      /pgf/number format/assume math mode=true,
+      nodes near coords style={font=\sffamily\tiny},
+      legend style={font=\sffamily\tiny, at={(0.5,1.02)}, anchor=south, draw=none, fill=none,
+                    /tikz/every even column/.append style={column sep=4pt}},
+      ylabel shift=-2pt}}
+  \def\W{5.2}      % panel width (cm)
+  \def\G{0.45}     % gap between panels
+  \pgfmathsetmacro{\xB}{\W+\G}
+  \pgfmathsetmacro{\xC}{2*\W+2*\G}
+
+  % =============================== ROW 1: protocol ======================
+  \def\yT{0}  \def\hT{3.9}
+  \foreach \x/\c/\t in {0/thRetain/{1. Tune RMU on the source},
+                        \xB/thLinked/{2. Transfer to three target models},
+                        \xC/thNeutral/{3. Evaluate every model}} {
+    \draw[panel=\c] (\x,\yT) rectangle ++(\W,-\hT);
+    \node[hdr=\c, anchor=north] at (\x+\W/2,\yT) {\t};
+  }
+  \node[body, anchor=north] at (\W/2,\yT-0.85)
+    {\textbf{Zephyr-7B} (32 layers)\\[3pt]
+     Sweep $\beta \in \{0.5,1,2,4,8\}$ on the source only.\\
+     Select $\beta^{*}=2$: most forgetting\\ with MMLU drop $\le 2$ points.\\[3pt]
+     \textcolor{thForget}{RMU: $c=6.5$, layer 7}};
+  \node[body, anchor=north] at (\xB+\W/2,\yT-0.85)
+    {\textbf{Llama-3.1-8B} (32) \quad \textbf{Qwen2.5-7B} (28)\\
+     \textbf{Gemma-2-9B} (42)\\[3pt]
+     Three methods, no target-side tuning:\\
+     RMU ($c=6.5$), Adaptive RMU,\\ and \textbf{NormRMU}:\\[2pt]
+     $c=\beta^{*} N_\ell$, \quad $\ell=\mathrm{round}(\rho L)$};
+  \node[body, anchor=north] at (\xC+\W/2,\yT-0.85)
+    {\textbf{WMDP-Cyber}: lower = forgotten\\
+     \textbf{MMLU}: higher = general capability kept\\[3pt]
+     Three seeds per transfer run.\\
+     Compare with an \textbf{oracle}\\
+     $\Rightarrow$ transfer gap $G = A_{\text{transfer}} - A_{\text{oracle}}$};
+  \draw[flow] (\W+0.03,\yT-2.1) -- (\xB-0.03,\yT-2.1);
+  \draw[flow] (\xB+\W+0.03,\yT-2.1) -- (\xC-0.03,\yT-2.1);
+
+  % =============================== ROW 2: results =======================
+  \def\yM{-4.35}  \def\hM{5.6}
+  \foreach \x/\c/\t in {0/thForget/{Activation norms differ 35$\times$},
+                        \xB/thRetain/{RMU does not transfer},
+                        \xC/thLinked/{NormRMU fixes only Qwen2.5-7B}} {
+    \draw[panel=\c] (\x,\yM) rectangle ++(\W,-\hM);
+    \node[hdr=\c, anchor=north] at (\x+\W/2,\yM) {\t};
+  }
+
+  % ---- (a) activation norms at layer 7, log scale
+  \begin{axis}[ov, at={(0.05cm,\yM cm-5.5cm)}, ybar, bar width=7mm,
+      ymode=log, ymin=1, ymax=400, log basis y=10,
+            symbolic x coords={Zephyr,Llama,Qwen,Gemma}, xtick=data,
+      xticklabels={Zephyr-\\7B, Llama-\\3.1-8B, Qwen2.5-\\7B, Gemma-\\2-9B}, xticklabel style={align=center},
+      tick label style={font=\sffamily\tiny}, ylabel={Mean activation norm $N_7$},
+      ylabel style={font=\sffamily\tiny}, ytick={1,10,100}, yticklabels={1,10,100},
+      nodes near coords={\pgfmathprintnumber[fixed,fixed zerofill,precision=1]{\pgfplotspointmeta}}, nodes near coords style={font=\sffamily\tiny},
+      point meta=rawy, axis x line*=bottom, axis y line*=left,
+      enlarge x limits=0.18]
+    \addplot[fill=thForget!70, draw=none] table[x=model, y=norm, col sep=comma] {output/norms_L7.csv};
+  \end{axis}
+
+  % ---- (b) WMDP-Cyber accuracy: base / RMU transferred / oracle
+  \begin{axis}[ov, at={(\xB cm+0.05cm,\yM cm-5.5cm)}, ybar=0pt, area legend, bar width=2.6mm,
+      ymin=0, ymax=62,
+            symbolic x coords={Zephyr,Llama,Qwen,Gemma}, xtick=data,
+      xticklabels={Zephyr-\\7B, Llama-\\3.1-8B, Qwen2.5-\\7B, Gemma-\\2-9B}, xticklabel style={align=center},
+      tick label style={font=\sffamily\tiny}, ylabel={WMDP-Cyber acc.\ (\%)},
+      ylabel style={font=\sffamily\tiny},
+      legend columns=3,
+      enlarge x limits=0.18]
+    \addplot[fill=thNeutral!45, draw=none] table[x=model, y=base,   col sep=comma] {output/wmdp_transfer.csv};
+    \addplot[fill=thForget!75, draw=none]  table[x=model, y=rmu,    col sep=comma] {output/wmdp_transfer.csv};
+    \addplot[fill=thRetain!80, draw=none]  table[x=model, y=oracle, col sep=comma] {output/wmdp_transfer.csv};
+    \legend{Base, RMU, Oracle}
+    \draw[dashed, thNeutral] (rel axis cs:0,0.403) -- (rel axis cs:1,0.403);
+  \end{axis}
+
+  % ---- (c) transfer gap on target models: RMU vs NormRMU
+  \begin{axis}[ov, at={(\xC cm+0.05cm,\yM cm-5.5cm)}, ybar=5pt, area legend, bar width=3.3mm,
+      ymin=0, ymax=26,
+            symbolic x coords={Llama,Qwen,Gemma}, xtick=data,
+      xticklabels={Llama-\\3.1-8B, Qwen2.5-\\7B, Gemma-\\2-9B}, xticklabel style={align=center},
+      tick label style={font=\sffamily\tiny}, ylabel={Transfer gap (points)},
+      ylabel style={font=\sffamily\tiny},
+      nodes near coords={\pgfmathprintnumber[fixed,fixed zerofill,precision=1]{\pgfplotspointmeta}}, nodes near coords style={font=\sffamily\tiny},
+      legend columns=2,
+      enlarge x limits=0.25]
+    \addplot[fill=thForget!75, draw=none] table[x=model, y=rmu,     col sep=comma] {output/transfer_gap.csv};
+    \addplot[fill=thLinked!85, draw=none] table[x=model, y=normrmu, col sep=comma] {output/transfer_gap.csv};
+    \legend{RMU, NormRMU}
+  \end{axis}
+
+  % =============================== ROW 3: takeaways =====================
+  \def\yB{-10.4}  \def\hB{2.55}
+  \pgfmathsetmacro{\Wfull}{3*\W+2*\G}
+  \draw[panel=thNeutral] (0,\yB) rectangle ++(\Wfull,-\hB);
+  \node[hdr=thNeutral, anchor=north, text width=\Wfull cm - 4pt] at (\Wfull/2,\yB) {Key takeaways};
+  \pgfmathsetmacro{\q}{\Wfull/4}
+  \foreach \i/\c/\t in {
+     0/thRetain/{RMU hyperparameters tuned on one model have almost no effect on the other three ($\le$1.5 points).},
+     1/thLinked/{Norm calibration recovers transfer on Qwen2.5-7B (transfer gap 19.2 $\to$ 1.0) but not on Llama-3.1-8B or Gemma-2-9B.},
+     2/thForget/{A 50-step relearning attack recovers 90--95\% of the removed accuracy.},
+     3/thNeutral/{Label-free alignment $\kappa \ge 0.9$ flags forgetting on held-out models too; choosing $\beta$ by it cuts their transfer gap from 8.2 to 2.0 points.}} {
+    \node[num=\c] (n\i) at (\i*\q+0.45,\yB-1.5) {\pgfmathparse{int(\i+1)}\pgfmathresult};
+    \node[tk, anchor=west] at (\i*\q+0.8,\yB-1.5) {\t};
+  }
+  \foreach \i in {1,2,3} \draw[thNeutral!40] (\i*\q,\yB-0.85) -- (\i*\q,\yB-2.4);
+\end{tikzpicture}

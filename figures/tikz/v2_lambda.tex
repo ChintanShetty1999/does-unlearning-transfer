@@ -1,0 +1,25 @@
+%% Figure: CA-NPO anchor weight lambda vs. damage to linked knowledge.
+%% Data: output/ch3/v2_lambda_sweep.csv (lambda = 0 is plain NPO with a retain term).
+\begin{tikzpicture}
+\begin{axis}[
+    width=10cm, height=6cm,
+    xmode=log, log basis x=10, xmin=0.02, xmax=3,
+    xtick={0.05,0.1,0.5,1,2}, xticklabels={0.05,0.1,0.5,1,2},
+    ymode=log, ymin=0.05, ymax=3, ytick={0.1,0.3,1,3}, yticklabels={0.1,0.3,1,3},
+    xlabel={Anchor weight $\lambda$}, ylabel={Damage to linked ($\Delta$NLL)},
+    tick label style={font=\footnotesize}, label style={font=\small},
+    grid=major, grid style={gray!20}, axis x line*=bottom, axis y line*=left,
+    legend style={font=\footnotesize, draw=none, fill=none, at={(0.98,0.98)}, anchor=north east},
+    mark size=2pt, thick,
+  ]
+  % lambda = 0 cannot be placed on a log axis, so it is drawn as a marker at the left edge
+  \addplot[thForget, mark=*]   table[x=lam, y=mistral_linked, col sep=comma, restrict x to domain*=-5:1] {output/ch3/v2_lambda_sweep.csv};
+  \addplot[thRetain, mark=square*] table[x=lam, y=llama_linked, col sep=comma, restrict x to domain*=-5:1] {output/ch3/v2_lambda_sweep.csv};
+  \addplot[thLinked, mark=triangle*] table[x=lam, y=qwen_linked, col sep=comma, restrict x to domain*=-5:1] {output/ch3/v2_lambda_sweep.csv};
+  \legend{Mistral-7B, Llama-3.1-8B, Qwen2.5-7B}
+  \addplot[only marks, mark=*, thForget, mark options={fill=white}]          coordinates {(0.025,2.293)};
+  \addplot[only marks, mark=square*, thRetain, mark options={fill=white}]    coordinates {(0.025,1.392)};
+  \addplot[only marks, mark=triangle*, thLinked, mark options={fill=white}]  coordinates {(0.025,0.867)};
+  \node[font=\footnotesize, anchor=west] at (axis cs:0.028,1.4) {$\lambda{=}0$};
+\end{axis}
+\end{tikzpicture}

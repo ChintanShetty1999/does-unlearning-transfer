@@ -1,0 +1,71 @@
+%% Figure: one decoder layer under pre-normalization (Zephyr, Llama, Qwen)
+%% versus the pre+post normalization used by Gemma-2.
+\begin{tikzpicture}[
+    font=\small,
+    op/.style={draw=thNeutral, fill=white, rounded corners=2pt, minimum width=17mm,
+               minimum height=6.5mm, inner sep=2pt},
+    nrm/.style={op, fill=thRetain!12, draw=thRetain},
+    sub/.style={op, fill=thLinked!15, draw=thLinked, minimum width=19mm},
+    add/.style={circle, draw=thNeutral, fill=white, inner sep=0pt, minimum size=4.5mm},
+    flow/.style={-{Stealth[length=2mm]}, draw=thNeutral, thick},
+    stream/.style={draw=thForget, line width=1.6pt},
+  ]
+  % ------------------------------------------------------------ (a) pre-norm
+  \begin{scope}
+    \def\sx{0}            % x of residual stream
+    \draw[stream, -{Stealth[length=2.6mm]}] (\sx,0) -- (\sx,8.2);
+    \node[font=\small\bfseries, anchor=south] at (\sx,8.3) {$h^{\ell}$};
+    \node[font=\small\bfseries, anchor=north] at (\sx,-0.05) {$h^{\ell-1}$};
+    \node[add] (a1) at (\sx,3.1) {$+$};
+    \node[add] (a2) at (\sx,6.6) {$+$};
+    % attention branch
+    \node[nrm] (n1) at (2.4,1.2) {Norm};
+    \node[sub] (at) at (2.4,2.3) {Attention};
+    \draw[flow] (\sx,0.6) -| (n1.south);
+    \draw[flow] (n1) -- (at);
+    \draw[flow] (at.north) |- (a1.east);
+    % MLP branch
+    \node[nrm] (n2) at (2.4,4.7) {Norm};
+    \node[sub] (ml) at (2.4,5.8) {MLP};
+    \draw[flow] (\sx,4.1) -| (n2.south);
+    \draw[flow] (n2) -- (ml);
+    \draw[flow] (ml.north) |- (a2.east);
+    \node[font=\small\bfseries, align=center] at (1.4,-1.0)
+      {(a) Pre-normalization\\[-1pt]\footnotesize\mdseries Zephyr-7B, Llama-3.1-8B, Qwen2.5-7B};
+  \end{scope}
+
+  % ------------------------------------------------------------ (b) pre+post
+  \begin{scope}[xshift=6.6cm]
+    \def\sx{0}
+    \draw[stream, -{Stealth[length=2.6mm]}] (\sx,0) -- (\sx,8.2);
+    \node[font=\small\bfseries, anchor=south] at (\sx,8.3) {$h^{\ell}$};
+    \node[font=\small\bfseries, anchor=north] at (\sx,-0.05) {$h^{\ell-1}$};
+    \node[add] (b1) at (\sx,3.1) {$+$};
+    \node[add] (b2) at (\sx,6.6) {$+$};
+    \node[nrm] (m1) at (2.4,0.75) {Norm};
+    \node[sub] (bt) at (2.4,1.75) {Attention};
+    \node[nrm] (m1b) at (2.4,2.75) {Norm};
+    \draw[flow] (\sx,0.3) -| (m1.south);
+    \draw[flow] (m1) -- (bt); \draw[flow] (bt) -- (m1b);
+    \draw[flow] (m1b.north) |- (b1.east);
+    \node[nrm] (m2) at (2.4,4.25) {Norm};
+    \node[sub] (bl) at (2.4,5.25) {MLP};
+    \node[nrm] (m2b) at (2.4,6.25) {Norm};
+    \draw[flow] (\sx,3.8) -| (m2.south);
+    \draw[flow] (m2) -- (bl); \draw[flow] (bl) -- (m2b);
+    \draw[flow] (m2b.north) |- (b2.east);
+    \node[font=\small\bfseries, align=center] at (1.4,-1.0)
+      {(b) Pre- and post-normalization\\[-1pt]\footnotesize\mdseries Gemma-2-9B};
+  \end{scope}
+
+  % ------------------------------------------------------------ legend
+  \begin{scope}[xshift=11.6cm, yshift=5.2cm]
+    \draw[stream] (0,0) -- (0.7,0); \node[anchor=west, font=\footnotesize, align=left] at (0.8,0) {activation\\(never normalized)};
+    \node[nrm, minimum width=7mm, minimum height=4mm] at (0.35,-1.0) {};
+    \node[anchor=west, font=\footnotesize] at (0.8,-1.0) {RMSNorm};
+    \node[sub, minimum width=7mm, minimum height=4mm] at (0.35,-1.8) {};
+    \node[anchor=west, font=\footnotesize] at (0.8,-1.8) {sub-layer};
+    \node[anchor=west, font=\footnotesize, text width=33mm, align=left] at (0,-3.2)
+      {Each sub-layer adds its output to the activation, so the activation norm can grow with depth. RMU intervenes on the activation.};
+  \end{scope}
+\end{tikzpicture}

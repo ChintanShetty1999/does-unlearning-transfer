@@ -1,0 +1,496 @@
+{
+ "base_gemma9b": {
+  "model": "google/gemma-2-9b-it",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.56,
+    "acc_stderr,none": 0.049888765156985884
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.8,
+    "acc_stderr,none": 0.04020151261036849
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.48012078510317063,
+    "acc_stderr,none": 0.011210806558557536
+   }
+  }
+ },
+ "base_llama8b": {
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.59,
+    "acc_stderr,none": 0.04943110704237104
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.75,
+    "acc_stderr,none": 0.04351941398892446
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.45646703573225966,
+    "acc_stderr,none": 0.011177071575959902
+   }
+  }
+ },
+ "base_mistral7b": {
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.49,
+    "acc_stderr,none": 0.05024183937956913
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.65,
+    "acc_stderr,none": 0.04793724854411023
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4192249622546553,
+    "acc_stderr,none": 0.011072301825393278
+   }
+  }
+ },
+ "base_olmo7b": {
+  "model": "allenai/OLMo-2-1124-7B-Instruct",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.49,
+    "acc_stderr,none": 0.05024183937956913
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.69,
+    "acc_stderr,none": 0.046482319871173176
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.40261701056869653,
+    "acc_stderr,none": 0.011004817981976181
+   }
+  }
+ },
+ "base_qwen1.5b": {
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.49,
+    "acc_stderr,none": 0.05024183937956913
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.72,
+    "acc_stderr,none": 0.045126085985421296
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4126824358329139,
+    "acc_stderr,none": 0.011047267368364009
+   }
+  }
+ },
+ "base_qwen7b": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.69,
+    "acc_stderr,none": 0.046482319871173176
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.78,
+    "acc_stderr,none": 0.041633319989322654
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.5400100654252642,
+    "acc_stderr,none": 0.01118369899428163
+   }
+  }
+ },
+ "grid_gemma9b_c262": {
+  "model": "google/gemma-2-9b-it",
+  "deltas": "/raid/chintan/rmu_runs/gemma9b_c262/deltas.safetensors",
+  "tag": "gemma9b_c262",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.56,
+    "acc_stderr,none": 0.049888765156985884
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.8,
+    "acc_stderr,none": 0.04020151261036849
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4841469552088576,
+    "acc_stderr,none": 0.011214036866594583
+   }
+  }
+ },
+ "grid_gemma9b_c6.5": {
+  "model": "google/gemma-2-9b-it",
+  "deltas": "/raid/chintan/rmu_runs/gemma9b_c6.5/deltas.safetensors",
+  "tag": "gemma9b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.56,
+    "acc_stderr,none": 0.049888765156985884
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.8,
+    "acc_stderr,none": 0.04020151261036849
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4791142425767489,
+    "acc_stderr,none": 0.011209885067700109
+   }
+  }
+ },
+ "grid_llama8b_c15": {
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/llama8b_c15/deltas.safetensors",
+  "tag": "llama8b_c15",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.58,
+    "acc_stderr,none": 0.04960449637488582
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.8,
+    "acc_stderr,none": 0.04020151261036849
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.47559134373427275,
+    "acc_stderr,none": 0.011206300771823448
+   }
+  }
+ },
+ "grid_llama8b_c6.5": {
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/llama8b_c6.5/deltas.safetensors",
+  "tag": "llama8b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.57,
+    "acc_stderr,none": 0.049756985195624305
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.78,
+    "acc_stderr,none": 0.041633319989322654
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.47559134373427275,
+    "acc_stderr,none": 0.011206300771823448
+   }
+  }
+ },
+ "grid_mistral7b_c6.5": {
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "deltas": "/raid/chintan/rmu_runs/mistral7b_c6.5/deltas.safetensors",
+  "tag": "mistral7b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.51,
+    "acc_stderr,none": 0.05024183937956913
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.52,
+    "acc_stderr,none": 0.05021167315686783
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.2934071464519376,
+    "acc_stderr,none": 0.010217163473170863
+   }
+  }
+ },
+ "grid_olmo7b_c21": {
+  "model": "allenai/OLMo-2-1124-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/olmo7b_c21/deltas.safetensors",
+  "tag": "olmo7b_c21",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.48,
+    "acc_stderr,none": 0.05021167315686783
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.68,
+    "acc_stderr,none": 0.046882617226215076
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4081529944640161,
+    "acc_stderr,none": 0.01102875778476258
+   }
+  }
+ },
+ "grid_olmo7b_c6.5": {
+  "model": "allenai/OLMo-2-1124-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/olmo7b_c6.5/deltas.safetensors",
+  "tag": "olmo7b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.48,
+    "acc_stderr,none": 0.05021167315686783
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.68,
+    "acc_stderr,none": 0.046882617226215076
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.40714645193759436,
+    "acc_stderr,none": 0.011024513074317243
+   }
+  }
+ },
+ "grid_qwen1.5b_c142": {
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen1.5b_c142/deltas.safetensors",
+  "tag": "qwen1.5b_c142",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.48,
+    "acc_stderr,none": 0.05021167315686783
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.72,
+    "acc_stderr,none": 0.045126085985421296
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.41368897835933566,
+    "acc_stderr,none": 0.011051249457581173
+   }
+  }
+ },
+ "grid_qwen1.5b_c6.5": {
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen1.5b_c6.5/deltas.safetensors",
+  "tag": "qwen1.5b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.46,
+    "acc_stderr,none": 0.05009082659620332
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.72,
+    "acc_stderr,none": 0.045126085985421296
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.4126824358329139,
+    "acc_stderr,none": 0.011047267368364009
+   }
+  }
+ },
+ "grid_qwen7b_c156": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156/deltas.safetensors",
+  "tag": "qwen7b_c156",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.68,
+    "acc_stderr,none": 0.046882617226215076
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.77,
+    "acc_stderr,none": 0.042295258468165065
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.5354806240563664,
+    "acc_stderr,none": 0.01119139373421762
+   }
+  }
+ },
+ "grid_qwen7b_c156_lr5e-3_s500": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156_lr5e-3_s500/deltas.safetensors",
+  "tag": "qwen7b_c156_lr5e-3_s500",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.27,
+    "acc_stderr,none": 0.04461960433384737
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.36,
+    "acc_stderr,none": 0.048241815132442176
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.24811273276295923,
+    "acc_stderr,none": 0.009691952325568645
+   }
+  }
+ },
+ "grid_qwen7b_c156_lr5e-3_s75": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156_lr5e-3_s75/deltas.safetensors",
+  "tag": "qwen7b_c156_lr5e-3_s75",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.16,
+    "acc_stderr,none": 0.03684529491774706
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.25,
+    "acc_stderr,none": 0.04351941398892446
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.2591847005535984,
+    "acc_stderr,none": 0.009832637545643487
+   }
+  }
+ },
+ "grid_qwen7b_c156_lr5e-4_s500": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156_lr5e-4_s500/deltas.safetensors",
+  "tag": "qwen7b_c156_lr5e-4_s500",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.25,
+    "acc_stderr,none": 0.04351941398892446
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.31,
+    "acc_stderr,none": 0.04648231987117317
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.2586814292903875,
+    "acc_stderr,none": 0.009826422736782116
+   }
+  }
+ },
+ "grid_qwen7b_c156_lr5e-4_s75": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156_lr5e-4_s75/deltas.safetensors",
+  "tag": "qwen7b_c156_lr5e-4_s75",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.32,
+    "acc_stderr,none": 0.04688261722621507
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.32,
+    "acc_stderr,none": 0.04688261722621507
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.24559637644690488,
+    "acc_stderr,none": 0.009658801441093861
+   }
+  }
+ },
+ "grid_qwen7b_c156_lr5e-5_s500": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c156_lr5e-5_s500/deltas.safetensors",
+  "tag": "qwen7b_c156_lr5e-5_s500",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.65,
+    "acc_stderr,none": 0.04793724854411023
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.59,
+    "acc_stderr,none": 0.04943110704237104
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.2843482637141419,
+    "acc_stderr,none": 0.010122470806330958
+   }
+  }
+ },
+ "grid_qwen7b_c325": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c325/deltas.safetensors",
+  "tag": "qwen7b_c325",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.69,
+    "acc_stderr,none": 0.046482319871173176
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.78,
+    "acc_stderr,none": 0.041633319989322654
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.5289380976346251,
+    "acc_stderr,none": 0.011200870940306126
+   }
+  }
+ },
+ "grid_qwen7b_c6.5": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c6.5/deltas.safetensors",
+  "tag": "qwen7b_c6.5",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.69,
+    "acc_stderr,none": 0.046482319871173176
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.79,
+    "acc_stderr,none": 0.040936018074033236
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.532964267740312,
+    "acc_stderr,none": 0.011195267600315377
+   }
+  }
+ },
+ "grid_qwen7b_c65": {
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "deltas": "/raid/chintan/rmu_runs/qwen7b_c65/deltas.safetensors",
+  "tag": "qwen7b_c65",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.68,
+    "acc_stderr,none": 0.046882617226215076
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.79,
+    "acc_stderr,none": 0.040936018074033236
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.5324609964771012,
+    "acc_stderr,none": 0.011196008039745197
+   }
+  }
+ },
+ "zephyr_base_subset": {
+  "model": "HuggingFaceH4/zephyr-7b-beta",
+  "deltas": null,
+  "tag": "base",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.5,
+    "acc_stderr,none": 0.050251890762960605
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.63,
+    "acc_stderr,none": 0.048523658709390974
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.44187216909914445,
+    "acc_stderr,none": 0.011143600696939503
+   }
+  }
+ },
+ "zephyr_cyber_repro": {
+  "model": "HuggingFaceH4/zephyr-7b-beta",
+  "deltas": "/raid/chintan/rmu_runs/zephyr_cyber_repro/deltas.safetensors",
+  "tag": "zephyr_cyber_repro",
+  "results": {
+   "mmlu_college_computer_science": {
+    "acc,none": 0.5,
+    "acc_stderr,none": 0.050251890762960605
+   },
+   "mmlu_computer_security": {
+    "acc,none": 0.23,
+    "acc_stderr,none": 0.04229525846816507
+   },
+   "wmdp_cyber": {
+    "acc,none": 0.24911927528938096,
+    "acc_stderr,none": 0.009705088987231799
+   }
+  }
+ }
+}

@@ -1,0 +1,40 @@
+%% Figure: how RMU edits a model. Forget inputs are pushed toward c*u at
+%% layer l; retain inputs are anchored to the frozen model. Only the MLP
+%% down-projections of layers l-2..l are updated.
+\begin{tikzpicture}[node distance=3mm]
+  % --- model being unlearned (left column) ---
+  \node[th/layer] (emb) {Embedding};
+  \node[th/layer, above=of emb] (l1) {Layers $1 \ldots \ell-3$};
+  \node[th/hot,   above=of l1]  (l2) {Layer $\ell-2$ (updated)};
+  \node[th/hot,   above=of l2]  (l3) {Layer $\ell-1$ (updated)};
+  \node[th/hot,   above=of l3]  (l4) {Layer $\ell$ (updated)};
+  \node[th/layer, above=of l4]  (l5) {Layers $\ell+1 \ldots L$};
+  \foreach \a/\b in {emb/l1,l1/l2,l2/l3,l3/l4,l4/l5} \draw[th/arrow] (\a) -- (\b);
+  \node[above=2mm of l5, font=\small\bfseries] {Model being unlearned};
+
+  % --- losses (middle column) ---
+  \node[th/box, draw=thRetain, text width=44mm, anchor=west]
+       (rt) at ($(l5.east)+(22mm,4mm)$)
+       {\textbf{Retain loss}\\[1pt]
+        $\lVert h_\ell(x_r) - h^{\text{frozen}}_\ell(x_r) \rVert^2$\\[1pt]
+        \footnotesize keep activations of the retain set unchanged};
+  \node[th/box, draw=thForget, text width=44mm, anchor=west]
+       (fg) at ($(l2.east)+(22mm,-4mm)$)
+       {\textbf{Forget loss}\\[1pt]
+        $\lVert h_\ell(x_f) - c\,\mathbf{u} \rVert^2$\\[1pt]
+        \footnotesize push activations of the forget corpus toward the target $c\,\mathbf{u}$};
+
+  % --- frozen reference model (right column) ---
+  \node[th/layer, right=12mm of rt] (f4) {Layer $\ell$ (frozen)};
+  \node[above=2mm of f4, font=\small\bfseries] {Frozen copy};
+  \draw[th/arrow, draw=thRetain, dashed] (f4) -- (rt);
+
+  % --- hidden state at layer l feeds both losses ---
+  \coordinate (h) at ($(l4.east)+(9mm,0)$);
+  \draw[thick, draw=thNeutral] (l4.east) -- (h);
+  \node[font=\footnotesize, above=0pt of h, xshift=-4mm] {$h_\ell$};
+  \draw[th/arrow, draw=thRetain] (h) |- (rt.west);
+  \draw[th/arrow, draw=thForget] (h) |- (fg.west);
+
+  \node[th/note, below=3mm of fg] {$c$: coefficient, in absolute units};
+\end{tikzpicture}
